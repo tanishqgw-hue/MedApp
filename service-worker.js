@@ -1,10 +1,11 @@
 const CACHE = "meds-pwa-v1";
+
 const ASSETS = [
-  "./",
-  "./index.html",
-  "./style.css",
-  "./app.js",
-  "./manifest.json"
+  "/MedApp/",
+  "/MedApp/index.html",
+  "/MedApp/style.css",
+  "/MedApp/app.js",
+  "/MedApp/manifest.json"
 ];
 
 self.addEventListener("install", e => {
