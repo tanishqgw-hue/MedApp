@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Medicine Reminder</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#ff4b5c">
+
+</head>
+<body>
+
+  <!-- Floating ribbons -->
+  <div class="ribbon">🎀</div><div class="ribbon">🎀</div><div class="ribbon">🎀</div>
+  <div class="ribbon">🎀</div><div class="ribbon">🎀</div><div class="ribbon">🎀</div>
+
+  <div class="app">
+    <h1>Medicine Tracker 🎀</h1>
+
+    <!-- Add Medicine -->
+    <div class="card">
+      <h2>Add Medicine</h2>
+
+      <input id="medName" placeholder="Medicine name" />
+
+     
+
+      <select id="medFreq">
+  <option value="1">Once a day</option>
+  <option value="2">Twice a day</option>
+  <option value="3">Thrice a day</option>
+    </select>
+
+    <div id="timeSlots"></div>
+
+
+      <button id="addBtn" type="button">Add</button>
+    </div>
+
+    <!-- Medicine List -->
+    <div class="card">
+      <h2>Pending</h2>
+      <ul id="medList"></ul>
+    </div>
+
+    <div class="card taken-card">
+      <h2>Taken</h2>
+      <ul id="takenList"></ul>
+    </div>
+  </div>
+
+ <div class="card">
+  <h2>Year Calendar</h2>
+  <div id="yearCalendar"></div>
+</div>
+
+<!-- Day popup -->
+<div id="dayPopup" class="popup-card">
+  <h3 id="popupDate"></h3>
+  <ul id="popupList"></ul>
+  <button onclick="closePopup()">Close</button>
+</div>
+
+
+
+  <!-- Undo toast -->
+  <div id="undoToast" class="toast">
+    Marked as taken.
+    <button id="undoBtn">Undo</button>
+  </div>
+
+  
+  <script src="app.js"></script>
+
+  <!-- Day details popup -->
+<div id="dayPopup" class="popup-card">
+  <div style="background:#fff;padding:16px;border-radius:14px;max-width:300px">
+    <h3 id="popupDate"></h3>
+    <ul id="popupList"></ul>
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
+
+
+</body>
+</html>
