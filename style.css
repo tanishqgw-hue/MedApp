@@ -172,30 +172,52 @@ li{
   font-weight:bold;
 }
 
-/* popup */
+/* ---------- Mobile friendly popup ---------- */
 .popup-card{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.4);
+  background:rgba(0,0,0,.35);
   display:none;
-  justify-content:center;
-  align-items:center;
+  justify-content:flex-end;
+  align-items:flex-end;
   z-index:999;
-}
-.popup-card > div,
-.popup-card{
-  background:#fff;
-  padding:16px;
-  border-radius:14px;
-  max-width:300px;
 }
 
-.popup-card{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.4);
-  display:none;
-  justify-content:center;
-  align-items:center;
-  z-index:999;
+.popup-inner{
+  width:100%;
+  max-width:420px;
+  background:#fff;
+  border-radius:20px 20px 0 0;
+  padding:16px;
+  box-shadow:0 -4px 20px rgba(0,0,0,.2);
+  animation:slideUp .25s ease-out;
 }
+
+.popup-inner h3{
+  margin:0 0 8px;
+  color:#ff4b5c;
+  font-size:1.1em;
+}
+
+.popup-inner ul{
+  padding-left:18px;
+  margin:6px 0 12px;
+}
+
+.close-btn{
+  width:100%;
+  border:none;
+  background:#ff4b5c;
+  color:#fff;
+  padding:10px;
+  border-radius:12px;
+  font-weight:bold;
+}
+
+/* animation */
+@keyframes slideUp{
+  from{ transform:translateY(100%); }
+  to{ transform:translateY(0); }
+}
+
+
