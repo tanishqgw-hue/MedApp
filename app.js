@@ -6,22 +6,25 @@ function sendToEmailReminder(medName, timeStr){
   const email = "tanishqzade3@gmail.com";
   const today = new Date().toISOString().split("T")[0];
 
+  const payload = {
+    email: email,
+    medicine: medName,
+    date: today,
+    time: timeStr
+  };
+
   fetch(SCRIPT_URL, {
     method: "POST",
     headers: {
       "Content-Type": "text/plain;charset=utf-8"
     },
-    body: JSON.stringify({
-      email: email,
-      medicine: medName,
-      date: today,
-      time: timeStr
-    })
+    body: JSON.stringify(payload)
   })
-  .then(r => r.text())
-  .then(t => console.log("SCRIPT RESPONSE:", t))
-  .catch(e => console.error("FETCH ERROR:", e));
+  .then(res => res.text())
+  .then(txt => console.log("SCRIPT RESPONSE:", txt))
+  .catch(err => console.error("FETCH ERROR:", err));
 }
+
 
 
 
@@ -343,6 +346,7 @@ startReminderEngine();
 scheduleSaturdayInjection();
 
 });
+
 
 
 
