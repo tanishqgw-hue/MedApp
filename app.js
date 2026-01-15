@@ -268,9 +268,9 @@ function showDayDetails(date){
   popup.style.display = "flex";
 }
 
-function closePopup(){
+window.closePopup = function(){
   document.getElementById("dayPopup").style.display="none";
-}
+};
 
 /* ===================== E: PWA ===================== */
 if ("serviceWorker" in navigator) {
@@ -283,5 +283,6 @@ startReminderTimers();
 scheduleSaturdayInjection();
 
 });
+
 
 
