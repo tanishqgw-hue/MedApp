@@ -202,7 +202,7 @@ function buildYearCalendar(){
   const now = new Date();
   const year = now.getFullYear();
 
-  const monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const monthNames = ["Jan","Feb","Mar"];
 
   for(let m=0;m<12;m++){
     const box = document.createElement("div");
@@ -283,3 +283,4 @@ startReminderTimers();
 scheduleSaturdayInjection();
 
 });
+
