@@ -1,5 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxhX-LYVwII54R_kUULqTBLsYh7LPVjhPPIlBE88K_QkwfdYoT1SbAixbZxmqTfrDAd/exec";
+
+function sendToEmailReminder(medName, timeStr){
+  const email = "tanishqzade3@gmail.com";   // change this
+
+  const now = new Date();
+  const today = now.toISOString().split("T")[0]; // yyyy-mm-dd
+
+  fetch(SCRIPT_URL, {
+    method: "POST",
+    body: JSON.stringify({
+      email: email,
+      medicine: medName,
+      date: today,
+      time: timeStr
+    })
+  });
+}
+
+
 /* ===================== A: NOTIFICATIONS ===================== */
 if ("Notification" in window && Notification.permission !== "granted") {
   Notification.requestPermission();
@@ -136,6 +156,11 @@ addBtn.onclick = () => {
     schedule,
     taken:false
   });
+
+  // send email reminders for every timing
+schedule.forEach(s => {
+  sendToEmailReminder(name, s.time);
+});
 
   save();
   render();
@@ -312,6 +337,7 @@ startReminderEngine();
 scheduleSaturdayInjection();
 
 });
+
 
 
 
