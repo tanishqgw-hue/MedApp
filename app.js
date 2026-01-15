@@ -8,9 +8,8 @@ function sendToEmailReminder(medName, timeStr){
 
   fetch(SCRIPT_URL, {
     method: "POST",
-    mode: "no-cors",   // IMPORTANT
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "text/plain;charset=utf-8"
     },
     body: JSON.stringify({
       email: email,
@@ -19,9 +18,11 @@ function sendToEmailReminder(medName, timeStr){
       time: timeStr
     })
   })
-  .then(() => console.log("Sent to script"))
-  .catch(err => console.error("Script error:", err));
+  .then(r => r.text())
+  .then(t => console.log("SCRIPT RESPONSE:", t))
+  .catch(e => console.error("FETCH ERROR:", e));
 }
+
 
 
 
@@ -342,6 +343,7 @@ startReminderEngine();
 scheduleSaturdayInjection();
 
 });
+
 
 
 
