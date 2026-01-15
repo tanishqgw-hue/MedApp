@@ -204,7 +204,7 @@ function buildYearCalendar(){
 
   const monthNames = ["Jan","Feb","Mar"];
 
-  for(let m=0;m<12;m++){
+  for(let m=0;m<3;m++){
     const box = document.createElement("div");
     box.className="month";
 
@@ -283,4 +283,5 @@ startReminderTimers();
 scheduleSaturdayInjection();
 
 });
+
 
