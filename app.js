@@ -3,21 +3,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxhX-LYVwII54R_kUULqTBLsYh7LPVjhPPIlBE88K_QkwfdYoT1SbAixbZxmqTfrDAd/exec";
 
 function sendToEmailReminder(medName, timeStr){
-  const email = "tanishqzade3@gmail.com";   // change this
-
-  const now = new Date();
-  const today = now.toISOString().split("T")[0]; // yyyy-mm-dd
+  const email = "tanishqzade3@gmail.com";
+  const today = new Date().toISOString().split("T")[0];
 
   fetch(SCRIPT_URL, {
     method: "POST",
+    mode: "no-cors",   // IMPORTANT
+    headers: {
+      "Content-Type": "application/json"
+    },
     body: JSON.stringify({
       email: email,
       medicine: medName,
       date: today,
       time: timeStr
     })
-  });
+  })
+  .then(() => console.log("Sent to script"))
+  .catch(err => console.error("Script error:", err));
 }
+
 
 
 /* ===================== A: NOTIFICATIONS ===================== */
@@ -337,6 +342,7 @@ startReminderEngine();
 scheduleSaturdayInjection();
 
 });
+
 
 
 
