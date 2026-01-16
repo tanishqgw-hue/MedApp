@@ -59,7 +59,7 @@ function getTime(when, meal){
   d.setHours(h, m, 0, 0);
   if(when === "pre") d.setMinutes(d.getMinutes() - 15);
   if(when === "post") d.setMinutes(d.getMinutes() + 15);
-  return d.toLocaleTimeString([], {hour:"2-digit", minute:"2-digit"});
+  return `${String(d.getHours()).padStart(2,"0")}:${String(d.getMinutes()).padStart(2,"0")}`;
 }
 
 /* ===================== DYNAMIC SLOTS ===================== */
@@ -342,6 +342,7 @@ startReminderEngine();
 scheduleSaturdayInjection();
 
 });
+
 
 
 
