@@ -48,8 +48,8 @@ let meds = JSON.parse(localStorage.getItem("meds")) || [];
 let lastAction = null;
 
 const MEAL_TIMES = {
-  breakfast: "07:00",
-  lunch: "13:00",
+  breakfast: "07:45",
+  lunch: "13:20",
   dinner: "19:30"
 };
 
@@ -342,6 +342,7 @@ startReminderEngine();
 scheduleSaturdayInjection();
 
 });
+
 
 
 
