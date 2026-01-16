@@ -3,27 +3,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyGh1DhWMUyLllXyFB86DZePsh1gf_0eZ66u9vWWSjmbXPPd3HzWnoKq3ZI7ZVnvCeJ/exec";
 
 function sendToEmailReminder(medName, timeStr){
-  const email = "tanishqzade3@gmail.com";
-  const today = new Date().toISOString().split("T")[0];
-
   const payload = {
-    email: email,
+    email: "tanishqzade3@gmail.com",
     medicine: medName,
-    date: today,
+    date: new Date().toISOString().split("T")[0],
     time: timeStr
   };
 
-  fetch(SCRIPT_URL, {
+  fetch("/api/reminder", {
     method: "POST",
-    headers: {
-      "Content-Type": "text/plain;charset=utf-8"
-    },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload)
   })
-  .then(res => res.text())
-  .then(txt => console.log("SCRIPT RESPONSE:", txt))
-  .catch(err => console.error("FETCH ERROR:", err));
+  .then(r => r.text())
+  .then(t => console.log("PROXY RESPONSE:", t))
+  .catch(e => console.error("PROXY ERROR:", e));
 }
+
 
 
 
@@ -346,6 +342,7 @@ startReminderEngine();
 scheduleSaturdayInjection();
 
 });
+
 
 
 
