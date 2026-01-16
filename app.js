@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw3GXOzTpKZJtu4fofJDgFXxbCan3lwB3ejXd0horXTF_PDaL_YpIoECUMYN9L07kw/exec";
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyGh1DhWMUyLllXyFB86DZePsh1gf_0eZ66u9vWWSjmbXPPd3HzWnoKq3ZI7ZVnvCeJ/exec";
 
 function sendToEmailReminder(medName, timeStr){
   const email = "tanishqzade3@gmail.com";
@@ -346,6 +346,7 @@ startReminderEngine();
 scheduleSaturdayInjection();
 
 });
+
 
 
 
