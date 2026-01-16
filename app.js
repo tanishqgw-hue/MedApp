@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyGh1DhWMUyLllXyFB86DZePsh1gf_0eZ66u9vWWSjmbXPPd3HzWnoKq3ZI7ZVnvCeJ/exec";
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxlknuHNVioG6McGgD6MgFRhTM8QbQpEurLZraQiEIowZ4ZIOPA8hj-qf9cxV1QHYR8/exec";
 
 function sendToEmailReminder(medName, timeStr){
   const payload = {
@@ -342,6 +342,7 @@ startReminderEngine();
 scheduleSaturdayInjection();
 
 });
+
 
 
 
