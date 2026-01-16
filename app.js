@@ -169,7 +169,7 @@ schedule.forEach(s => {
 
   save();
   render();
-  startReminderTimers();
+  startReminderEngine();
   document.getElementById("medName").value="";
 };
 
@@ -342,6 +342,7 @@ startReminderEngine();
 scheduleSaturdayInjection();
 
 });
+
 
 
 
