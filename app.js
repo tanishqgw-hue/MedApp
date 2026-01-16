@@ -49,7 +49,7 @@ let lastAction = null;
 
 const MEAL_TIMES = {
   breakfast: "07:00",
-  lunch: "15:03",
+  lunch: "13:00",
   dinner: "19:30"
 };
 
@@ -342,6 +342,7 @@ startReminderEngine();
 scheduleSaturdayInjection();
 
 });
+
 
 
 
