@@ -1,7 +1,7 @@
 {
   "name": "Medicine Reminder",
   "short_name": "Meds",
-  "start_url": "/MedApp/",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#ffd6df",
   "theme_color": "#ff4b5c"
