@@ -1,11 +1,11 @@
-const CACHE = "meds-pwa-v1";
+const CACHE = "meds-pwa-v2";
 
 const ASSETS = [
-  "/MedApp/",
-  "/MedApp/index.html",
-  "/MedApp/style.css",
-  "/MedApp/app.js",
-  "/MedApp/manifest.json"
+  "/",
+  "/index.html",
+  "/style.css",
+  "/app.js",
+  "/manifest.json"
 ];
 
 self.addEventListener("install", e => {
@@ -16,6 +16,6 @@ self.addEventListener("install", e => {
 
 self.addEventListener("fetch", e => {
   e.respondWith(
-    caches.match(e.request).then(res => res || fetch(e.request))
+    caches.match(e.request).then(r => r || fetch(e.request))
   );
 });
