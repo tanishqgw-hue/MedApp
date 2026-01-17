@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function sendToEmailReminder(medName, timeStr){
   const payload = {
-    email: "tanishqzade3@gmail.com",
+    email: "shreeja.akella2992@gmail.com",
     medicine: medName,
     date: new Date().toISOString().split("T")[0],
     time: timeStr
@@ -342,6 +342,7 @@ startReminderEngine();
 scheduleSaturdayInjection();
 
 });
+
 
 
 
