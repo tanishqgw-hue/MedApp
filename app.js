@@ -238,7 +238,7 @@ function scheduleSaturdayInjection(){
   const target = new Date(now);
   const daysToSat = (6 - d + 7) % 7;
   target.setDate(now.getDate() + daysToSat);
-  target.setHours(9,0,0,0);
+  target.setHours(12,30,0,0);
 
   let diff = target - now;
   if(diff < 0) diff += 7*24*60*60*1000;
@@ -342,6 +342,7 @@ startReminderEngine();
 scheduleSaturdayInjection();
 
 });
+
 
 
 
