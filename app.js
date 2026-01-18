@@ -214,29 +214,31 @@ function startReminderEngine(){
     const now = new Date();
     const nowMin = now.getHours()*60 + now.getMinutes();
 
-    meds.forEach(m=>{
-      m.schedule.forEach((s,idx)=>{
-        const base = timeToMinutes(s.time);
+    meds.forEach(m => {
+      if (m.taken) return;
 
-        const before = base - 15;
-        const ontime = base;
-        const after  = base + 15;
+      const base = timeToMinutes(m.time);
 
-        [
-          {t: before, msg:`${m.name} in 15 minutes`},
-          {t: ontime, msg:`${m.name} now`},
-          {t: after,  msg:`${m.name} was due 15 minutes ago`}
-        ].forEach((r,i)=>{
-          const key = `${m.id}-${idx}-${i}`;
-          if(nowMin === r.t && !fired[key]){
-            notify("Medicine Reminder", r.msg);
-            fired[key] = true;
-            localStorage.setItem("firedToday", JSON.stringify(fired));
-          }
-        });
+      const before = base - 15;
+      const ontime = base;
+      const after  = base + 15;
+
+      [
+        { t: before, msg: `${m.name} in 15 minutes` },
+        { t: ontime, msg: `${m.name} now` },
+        { t: after,  msg: `${m.name} was due 15 minutes ago` }
+      ].forEach((r, i) => {
+        const key = `${m.id}-${i}`;
+
+        if (nowMin === r.t && !fired[key]) {
+          notify("Medicine Reminder", r.msg);
+          fired[key] = true;
+          localStorage.setItem("firedToday", JSON.stringify(fired));
+        }
       });
     });
-  }, 60000); // check every minute
+
+  }, 60000);
 }
 
 
@@ -351,6 +353,7 @@ startReminderEngine();
 scheduleSaturdayInjection();
 
 });
+
 
 
 
