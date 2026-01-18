@@ -143,10 +143,12 @@ function render(){
 
 /* ===================== ADD MED ===================== */
 addBtn.onclick = () => {
+  console.log("Clicked Add");
   const name = document.getElementById("medName").value.trim();
   if(!name) return alert("Enter medicine name");
 
   const slots = document.querySelectorAll("#timeSlots .slot");
+  console.log("Slots found:", slots.length);
   const schedule = [];
 
   slots.forEach(s=>{
@@ -155,6 +157,7 @@ addBtn.onclick = () => {
     const time = getTime(when, meal);
     schedule.push({when, meal, time});
   });
+  console.log("Schedule:", schedule);
 
  schedule.forEach(s => {
   meds.push({
@@ -348,6 +351,7 @@ startReminderEngine();
 scheduleSaturdayInjection();
 
 });
+
 
 
 
